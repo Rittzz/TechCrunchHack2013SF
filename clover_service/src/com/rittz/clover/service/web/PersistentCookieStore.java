@@ -16,7 +16,7 @@
     limitations under the License.
 */
 
-package com.rittz.hackathon.web;
+package com.rittz.clover.service.web;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

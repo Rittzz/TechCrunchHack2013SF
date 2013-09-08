@@ -2,8 +2,7 @@
 <resources>
 
     <!-- Modify these values to change meta information -->
-    <string name="app_name">Webview Shim</string>   
-    <string name="base_url">http://www.google.com/</string>
+    <string name="app_name">Clover Service</string>
     
-    <color name="window_color">#000000</color>
+    <string name="api_endpoint">http://www.google.com</string>
 </resources>
