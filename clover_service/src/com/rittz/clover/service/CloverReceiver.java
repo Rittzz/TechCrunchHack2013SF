@@ -3,6 +3,7 @@ package com.rittz.clover.service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class CloverReceiver extends BroadcastReceiver {
 
@@ -16,7 +17,9 @@ public class CloverReceiver extends BroadcastReceiver {
         final String paymentId = intent.getExtras().getString(EXTRA_PAYMENT_ID);
         final long amount = intent.getExtras().getLong(EXTRA_AMOUNT);
 
-        //Toast.makeText(context, "Received Action ["+orderId+","+paymentId+","+amount+"]", Toast.LENGTH_SHORT).show();
+        if (Debug.showToasts()) {
+            Toast.makeText(context, "Received Action ["+orderId+","+paymentId+","+amount+"]", Toast.LENGTH_SHORT).show();
+        }
 
         final Intent serviceIntent = WebService.makeIntent(context, orderId, paymentId, amount);
         context.startService(serviceIntent);
