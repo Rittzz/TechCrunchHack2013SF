@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Modify these values to change meta information -->
+    <string name="app_name">Webview Shim</string>   
+    <string name="base_url">http://www.google.com/</string>
+    
+    <color name="window_color">#000000</color>
+</resources>
