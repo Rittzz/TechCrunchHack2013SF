@@ -32,6 +32,8 @@
 
         <service android:name="com.rittz.clover.service.WebService" />
 
+        <service android:name="com.rittz.clover.service.LocationTrackingService" />
+        
         <receiver
             android:name="com.rittz.clover.service.CloverReceiver"
             android:exported="true"

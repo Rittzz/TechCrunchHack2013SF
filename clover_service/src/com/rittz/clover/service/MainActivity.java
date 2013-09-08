@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -44,6 +46,16 @@ public class MainActivity extends Activity {
                 catch (final NumberFormatException ex) {
                     Toast.makeText(MainActivity.this, "Amount must be a number", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        final CompoundButton locationTrack = (CheckBox) findViewById(R.id.location_tracking);
+        locationTrack.setChecked(LocationTrackingService.isTrackingLocation());
+        locationTrack.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(final CompoundButton buttonView, final boolean isChecked) {
+                final Intent intent = LocationTrackingService.makeIntent(MainActivity.this, isChecked);
+                startService(intent);
             }
         });
     }
